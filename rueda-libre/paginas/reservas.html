@@ -8,7 +8,6 @@
     
 </head>
 <body>
-  <main>
     <section>
         <header>
             <div class="nombre">
@@ -21,6 +20,7 @@
             </nav>
         </header><br>
     </section>
+  <main>
     <section class="reserva">
         <table border="1"> 
             <caption><h2>Reserva tu bicicleta</h2></caption>
@@ -90,25 +90,25 @@
                   </p>
                     <p>
                         <label for="cantidad">Cantidad de bicicletas:</label>
-                        <input type="number" id="cantidad" min="1" max="6" required>
+                        <input type="number" id="cantidad" min="1" max="6" name="cantidad" required>
                     </p>
                
                   <p>
                       <label for="guia">Recorrido guiados:</label><br>
                     <label>
-                        <input type="checkbox" id="guia">
+                        <input type="checkbox" id="rio">
                         Rios y Parques
                     </label><br>
                     <label>
-                        <input type="checkbox" id="guia">
+                        <input type="checkbox" id="sabore">
                         Sabores de Rio
                     </label><br>
                     <label>
-                        <input type="checkbox" id="guia">
+                        <input type="checkbox" id="reto">
                         Reto las palmas
                     </label><br>
                     <label>
-                        <input type="checkbox" id="guia">
+                        <input type="checkbox" id="ninguno">
                         Ninguno
                     </label>
                   </p>
@@ -116,7 +116,7 @@
             <fieldset>
                 <legend>Confirmacion</legend>
                 <p>
-                    <label for="comen">Comentarios (maximo 400 caracteres):</label><br>
+                    <label for="comen">Comentarios (maximo 300 caracteres):</label><br>
                     <textarea name="comen" id="comen" maxlength="300" cols="40"></textarea>
                   </p>
                 <label >

@@ -208,12 +208,14 @@ textarea {
     border-radius: 6px;
     font: inherit;              
 }
+
 input:focus,
 select:focus,
 textarea:focus {
     outline: 2px solid var(--verde);
     border-color: var(--verde);
 }
+
 textarea {
     resize: vertical;         
 }
@@ -224,6 +226,7 @@ input[type="checkbox"] {
     margin-right: 0.4rem;
     accent-color: var(--verde);  
 }
+
 button[type="submit"] {
     background: var(--verde);
     color: var(--blanco);
@@ -250,17 +253,17 @@ footer {
 
 @media (max-width: 600px) {
     header {
-        flex-direction: column;  /* nombre arriba, menú abajo */
+        flex-direction: column;  
         gap: 1rem;
     }
  
     header .nombre,
     .menu {
-        order: 0;                /* se restablece el orden */
+        order: 0;                
     }
  
     #servicios img {
-        width: 100%;             /* una foto por fila */
+        width: 100%;            
     }
 }
 
