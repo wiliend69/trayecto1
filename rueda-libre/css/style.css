@@ -1,10 +1,10 @@
 :root {
-    --verde: #2e7d5b;
-    --verde-oscuro: #1f5a41;
-    --texto: #222; 
-    --gris-claro: #f4f6f5;
+    --verde: #ffdbbb;
+    --verde-oscuro: #fffdfb;
+    --texto: #ffffff; 
+    --gris-claro: #664930;
     --borde: #d8dedb; 
-    --blanco: #fff;
+    --blanco: #997e67;
     --ancho-max: 960px;
 }
 
@@ -77,6 +77,89 @@ header .nombre img {
     object-fit: cover;      
     border-radius: 50%;      
 }
+.flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+ 
+.flota .modelo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 0;
+}
+ 
+.flota .modelo img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+ 
+.flota .modelo h3 {
+    margin: 0.3rem 0 0;
+}
+ 
+.flota .modelo p {
+    margin: 0;
+}
+ 
+
+.flota .modelo p:not(.precio-hora) {
+    flex-grow: 1;
+}
+ 
+.precio-hora {
+    font-weight: 700;
+    color: var(--verde-oscuro);
+}
+ 
+.precio-hora span {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--texto);
+}
+ 
+.flota .reservar {
+    align-self: stretch;
+    text-align: center;
+    background: var(--verde);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+ 
+.flota .reservar:hover {
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+ 
+.alquilar a {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+ 
+.alquilar a:hover {
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
 
 .menu {
     order: 2;
