@@ -12,3 +12,11 @@ tabla de rutas
     ./paginas/reservas.html
     ./paginas/tarifa.html
 
+
+5 clases de boostrap 
+ <div class="card-body p-0 d-flex flex-column">
+        <h3 class="card-title h5 fw-bold mb-2">Urbana Clásica</h3>
+        <p class="card-text small mb-3 flex-grow-1">Cómoda y liviana para las ciclorrutas.</p>
+        <p class="mb-3 fw-bold">$10.000 <span class="fw-normal small opacity-75">por hora</span></p>
+        <a href="paginas/reservas.html" class="btn w-100 fw-semibold text-dark py-2" style="background-color: #f7dcd0; border-radius: 8px;">Reservar</a>
+</div>
