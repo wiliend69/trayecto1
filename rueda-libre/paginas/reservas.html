@@ -53,98 +53,100 @@
         </table>
      </div>
     </section>
-        <form method="post">
-             <fieldset>
-            <fieldset>
-                <legend>Tus datos</legend>
-                <p>
-                    <label for="nombre">*Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+       <section class="container pb-5">
+         <form method="post" class="mx-auto" style="max-width: 600px;">
+        <fieldset>
+            <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Tus datos</legend>
+                <p class="col-12 p-2">
+                    <label for="nombre" class="form-label fw-medium text-secondary">*Nombre completo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </p>
-                <p>
-                    <label for="docu">*Numero de documento</label>
-                    <input type="number" id="docu" name="docu" minlength="6" maxlength="10" required>
+                <p class="col-12 p-2">
+                    <label for="docu" class="form-label fw-medium text-secondary">*Numero de documento</label>
+                    <input type="number" class="form-control" id="docu" name="docu" minlength="6" maxlength="10" required>
+                </p class="col-12 p-2">
+                <p class="col-12 p-2">
+                    <label for="correo" class="form-label fw-medium text-secondary">*Correo electronico:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
                 </p>
-                <p>
-                    <label for="correo">*Correo electronico:</label>
-                    <input type="email" id="correo" name="correo" required>
-                </p>
-                <p>
-                    <label for="celu">*Celular (Tiene que empezar por 3)</label>
-                    <input type="tel" id="celu" name="celu"  pattern="3[0-9]{5,9}" required>
+                <p class="col-12 p-2">
+                    <label for="celu" class="form-label fw-medium text-secondary">*Celular (Tiene que empezar por 3)</label>
+                    <input type="tel" class="form-control" id="celu" name="celu"  pattern="3[0-9]{5,9}" required>
                 </p>
             </fieldset>
-            <fieldset>
-                <legend>Tu alquiler</legend>
+            <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Tu alquiler</legend>
                 
-                  <p>
-                      <label for="alqui">*Fecha de alquiler (Nov 1 - Dic 02 | 2026):</label>
-                    <input type="date" id="alqui" name="alqui" min="2026-11-01" max="2026-12-02" required>
+                  <p class="col-12 p-2">
+                      <label for="alqui" class="form-label fw-medium text-secondary">*Fecha de alquiler (Nov 1 - Dic 02 | 2026):</label>
+                    <input type="date" class="form-control" id="alqui" name="alqui" min="2026-11-01" max="2026-12-02" required>
                   </p>
                 
-                  <p>
-                      <label for="tipo">Tipo de bicicleta</label>
-                    <select name="tipo" id="tipo" required>
+                  <p class="col-12 p-2">
+                      <label for="tipo" class="form-label fw-medium text-secondary">Tipo de bicicleta</label>
+                    <select name="tipo" class="form-select" id="tipo" required>
                         <option value="urban">Urbana</option>
                         <option value="monta">Montaña</option>
                         <option value="elec">Electrica</option>
                     </select>
                   </p>
-                  <p>
-                    <label for="plan">Plan:</label><br>
-                    <label>
-                        <input type="radio" id="1-hora" name="plan" value="1-hora" required>
+                  <p class="col-12 p-2">
+                    <label for="plan" class="form-label fw-medium text-secondary d-block mb-2">Plan:</label><br>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="1-hora" name="plan" value="1-hora" required>
                         1 Hora
                     </label><br>
-                    <label>
-                        <input type="radio" id="medio-dia" name="plan" value="medio-dia" required>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" id="medio-dia" name="plan" value="medio-dia" required>
                         Medio dia
                     </label><br>
-                    <label>
-                        <input type="radio" id="dia-com" name="plan" value="dia-com" required>
+                    <label class="form-check-label">
+                        <input type="radio" id="dia-com" class="form-check-input" name="plan" value="dia-com" required>
                         Dia completo
                     </label>
                   </p>
-                    <p>
-                        <label for="cantidad">Cantidad de bicicletas:</label>
-                        <input type="number" id="cantidad" min="1" max="6" name="cantidad" required>
+                    <p class="col-12 p-2">
+                        <label for="cantidad" class="form-label fw-medium text-secondary">Cantidad de bicicletas:</label>
+                        <input type="number" class="form-control" id="cantidad" min="1" max="6" name="cantidad" required>
                     </p>
                
-                  <p>
-                      <label for="guia">Recorrido guiados:</label><br>
-                    <label>
-                        <input type="checkbox" id="rio">
+                  <p class="col-12 p-2">
+                      <label for="guia" class="form-label fw-medium text-secondary d-block mb-2">Recorrido guiados:</label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="rio">
                         Rios y Parques
                     </label><br>
-                    <label>
-                        <input type="checkbox" id="sabore">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="sabore">
                         Sabores de Rio
                     </label><br>
-                    <label>
-                        <input type="checkbox" id="reto">
+                    <label class="form-check-label">
+                        <input type="checkbox" id="reto" class="form-check-input">
                         Reto las palmas
                     </label><br>
-                    <label>
-                        <input type="checkbox" id="ninguno">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="ninguno">
                         Ninguno
                     </label>
                   </p>
             </fieldset>
-            <fieldset>
-                <legend>Confirmacion</legend>
-                <p>
-                    <label for="comen">Comentarios (maximo 300 caracteres):</label><br>
-                    <textarea name="comen" id="comen" maxlength="300" cols="40"></textarea>
+            <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Confirmacion</legend>
+                <p class="col-12 p-2">
+                    <label for="comen" class="form-label fw-medium text-secondary">Comentarios (maximo 300 caracteres):</label><br>
+                    <textarea name="comen" class="form-control" rows="4" id="comen" maxlength="300" cols="40"></textarea>
                   </p>
-                <label >
-                    <input type="checkbox" name="cond" id="cond" required>
-                    aceptación de las políticas de alquiler.
+                <label class=" form-check-label p-2">
+                    <input type="checkbox" class="form-check-input" name="cond" id="cond" required>
+                    aceptación de las políticas de alquiler. *
                 </label>
                 
             </fieldset>
-            <button type="submit" name="boton" >Reservar</button>
+            <button type="submit" name="boton" class=" btn-cafe btn-lg w-100 rounded-3 fw-semibold" style="background-color:#f7dcd0;" >Reservar</button>
         </fieldset>
         </form>
+       </section>
        
   </main><br>
     
