@@ -28,20 +28,30 @@
 
     </header>
   <main>
-    <section class="reserva">
-        <table> 
-            <caption><h2>Reserva tu bicicleta</h2></caption>
-            <thead>
+    <section class="reserva container py-5">
+     <div class="table-responsive mx-auto  rounded-4 overflow-hidden" style="max-width: 600px;">
+           <table class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide" style="background-color: #705844;"> 
+            <caption class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide" style="background-color: #705844;">
+                <h2 class="h4 mb-0">Reserva tu bicicleta</h2>
+            </caption>
+            <thead class="text-white" style="background-color: #8c735c;">
                 <tr>
-                    <th scope= "col">Dia</th>
-                    <th scope= "col">Horario</th>
+                    <th scope= "col" class="py-3 fw-semibold">Dia</th>
+                    <th scope= "col" class="py-3 fw-semibold">Horario</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr><td>Lunes a Viernes</td><td>7 am a 7 pm</td></tr>
-                <tr><td>Sabado, Domingo y festivos </td><td>6 am a 2 pm</td></tr>
+              <tbody style="background-color: #ffffff;">
+                <tr>
+                    <td class="py-3 fw-medium text-secondary">Lunes a Viernes</td>
+                    <td class="py-3 text-dark fw-bold">7:00 am a 7:00 pm</td>
+                </tr>
+                <tr>
+                    <td class="py-3 fw-medium text-secondary">Sábado, Domingo y festivos</td>
+                    <td class="py-3 text-dark fw-bold">6:00 am a 2:00 pm</td>
+                </tr>
             </tbody>
-        </table><br>
+        </table>
+     </div>
     </section>
         <form method="post">
              <fieldset>
@@ -138,7 +148,7 @@
        
   </main><br>
     
-    <footer>Rueda libre | hola@ruedalibre.example | 2026</footer>
+    <footer class="text-center text-white py-4" style="background-color: #705844;">Rueda libre | hola@ruedalibre.example | 2026</footer>
     
 </body>
 </html>
