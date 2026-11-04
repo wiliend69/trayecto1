@@ -20,3 +20,385 @@ tabla de rutas
         <p class="mb-3 fw-bold">$10.000 <span class="fw-normal small opacity-75">por hora</span></p>
         <a href="paginas/reservas.html" class="btn w-100 fw-semibold text-dark py-2" style="background-color: #f7dcd0; border-radius: 8px;">Reservar</a>
 </div>
+- En tarifas es span ya que es un texto corto dando un contexto debajo en la tabla.
+- Utilice required en todos los campos ya que todos estos son necesarios para la reserva.
+- Utilice radio en recorido ya que solo puedo escoger uno de estos, y radio hace que a escoger otro opcion quite la anterior.
+- Select para escoger uno de las bicicicletas.
+
+Arreglos de accesibilidad:
+Idioma: Le puse lang="es" a las tres paginas para que no quede en ingles.
+Imágenes: Les puse texto real en el alt para que se sepa qué hay en la foto.
+Enlaces: Quite las palabras raras como "aquí" o "maps" y le puse nombres claros como ver ubicación en Google Maps
+Títulos: Organicé los h1, h2 y h3 en orden para no saltarme ninguno
+Teclado: Probe presionar la tecla Tab y se puede navegar por todo el sitio sin problema 
+
+Pruebas de color:
+Blanco sobre Verde Ruta: Solo sirve si la letra es grande.
+Blanco sobre Naranja Pedal: No sirve, no se lee bien.
+Azul Noche sobre Naranja Pedal: Si sirve.
+Azul Noche sobre Crema: Si sirve
+Gris Asfalto sobre Crema: Si sirve
+Verde Ruta sobre Crema: Si sirve
+Naranja Pedal sobre Crema: No sirve para parrafos
+Blanco sobre Azul Noche: Si sirve 
+
+ Idioma: Le puse lang="es" a las tres paginas para que no quede en ingles.
+
+Imágenes: Les puse texto real en el alt para que se sepa qué hay en la foto.
+
+Enlaces: Quite las palabras raras como "aquí" o "maps" y le puse nombres claros como ver ubicación en Google Maps
+
+Títulos: Organicé los h1, h2 y h3 en orden para no saltarme ninguno
+
+Teclado: Probe presionar la tecla Tab y se puede navegar por todo el sitio sin problema
+
+
+Pruebas de color:
+
+Blanco sobre Verde Ruta: Solo sirve si la letra es grande.
+
+Blanco sobre Naranja Pedal: No sirve, no se lee bien.
+
+Azul Noche sobre Naranja Pedal: Si sirve.
+
+Azul Noche sobre Crema: Si sirve
+
+Gris Asfalto sobre Crema: Si sirve
+
+Verde Ruta sobre Crema: Si sirve
+
+Naranja Pedal sobre Crema: No sirve para parrafos
+
+Blanco sobre Azul Noche: Si sirve
+
+
+Donde uso cada color:
+
+Texto: Gris Asfalto o Azul Noche sobre fondo Crema.
+
+Títulos: Azul Noche sobre fondo Crema.
+
+Fondos: Crema para la pagina y Azul Noche para partes destacadas.
+
+Botones: Azul Noche con letra blanca, o naranja Pedal con letra Azul Noche.
+
+Enlaces: Verde Ruta o azul Noche
+
+
+Solución al conflicto de especificidad y estados interactivos
+
+
+    ¿Por qué no funcionaba la clase .activo? 
+
+
+Causa:El selector del compañero #menu a usa un ID , por lo que tiene una especificidad de (0, 1, 0, 1). En cambio, el selector .activo solo usa una clase, con una especificidad de (0, 0, 1, 0).
+
+2. ¿Cómo se corrigió sin usar !important?
+
+Se cambió el selector a #menu a.activo al combinar el ID, la etiqueta y la clase.
+
+3. Verificación de Focus y Hover
+
+Se uso la herramienta :hov en DevTools para probar los estados :hover y :focus.
+
+Se agregaron bordes visibles (`outline`) al usar la tecla `Tab` en enlaces, botones y campos de texto para garantizar accesibilidad.
+
+
+Cierre de Bitácora - Rueda Libre 
+
+
+Resumen de desarrollo semanal
+
+Estructura HTML y Semántica:Se crearon las tres páginas del sitio respetando etiquetas semánticas y corrigiendo el idioma a lang="es".
+
+Estilos globales y Variables CSS: Se centralizaron colores, fuentes de Google Fonts  y una escala de espaciados en rem dentro de :root.
+
+Accesibilidad:Se solucionaron textos alternativos en imágenes, jerarquía de encabezados , textos explicativos en enlaces y contrastes aprobados .
+
+Cascada y Especificidad:Se corrigieron conflictos con el menú de navegación  garantizando un estado activo visible sin !important.
+
+Box Model y Posicionamiento: Se implementó box-sizing: border-box, se ordenaron las tarjetas con position: relative, se añadio la etiqueta Nuevo con position: absolute y el botón de WhatsApp con position: fixed.
+
+
+Prueba de diseño responsive y flexbox
+
+    Al abrir la página en pantalla ancha, el nombre del negocio queda a la izquierda y el menú a la derecha, alineados verticalmente con `align-items: center` y separados con `justify-content: space-between`. 
+
+
+    El menú se comporta como un contenedor flexible con `display: flex`, `flex-wrap: wrap` y `gap`, sin depender de márgenes ni `inline-block` para separar cada enlace. 
+
+
+    Cuando se estrecha la ventana, los enlaces del menú bajan a la siguiente línea en lugar de desbordarse. El contenedor mantiene el flujo con `flex-wrap: wrap` y el ancho se adapta sin romper la estructura. 
+
+
+    El pie se organiza en tres bloques visuales en una fila: marca, contacto y horario. Con `display: flex`, `flex-direction: row`, `justify-content: space-between` y `gap`, cada bloque queda alineado arriba y con separación uniforme. 
+
+
+    El comportamiento observado confirma que el encabezado y el pie responden bien a la reducción del ancho, manteniendo legibilidad y orden visual en las tres páginas porque todos los estilos se comparten desde la misma hoja CSS. 
+
+
+
+SEMANA 2
+
+
+    A 1280 px : Se observan 6 columnas alineadas en la cuadrícula. 
+
+
+
+    A 900 px : La cuadrícula se reorganiza automáticamente a 2 columnas. 
+
+
+
+    A 500 px : La cuadrícula se reduce a 1 columna  
+
+
+
+DECISIONES DE LAYOUT: CRITERIO DE 1 DIMENSIÓN (FLEXBOX) VS 2 DIMENSIONES (GRID)
+
+
+    Portada de inicio (Hero): 
+
+
+    Decisión: Grid 
+
+
+    Justificación: Se utilizó CSS Grid por ser una estructura bidimensional (2D) dividida en dos columnas principales mediante unidades fr (1fr 1fr). Esto permite controlar la relación espacial entre la columna de texto a la izquierda y la columna de la fotografía a la derecha, facilitando además el alineamiento vertical del contenido con align-items: center sin depender de cálculos manuales de margen. 
+
+
+
+2. Galería "Nuestras rutas":
+
+    Decisión: Grid 
+
+
+    Justificación: Se utilizó CSS Grid porque se requería definir una cuadrícula estricta de tres tarjetas de rutas guiadas en una sola fila. Mediante grid-template-columns: repeat(3, 1fr) y gap se asegura que las tres tarjetas tengan exactamente el mismo ancho, proporción y espaciado homogéneo bidimensional en escritorio. 
+
+
+
+3. Layout de Reservas:
+
+    Decisión: Grid 
+
+
+    Justificación: Se utilizó CSS Grid ya que es un diseño estructural bidimensional (2D) que divide la página en una proporción 2:1. Con grid-template-columns: 2fr 1fr, el formulario ocupa dos tercios del espacio horizontal a la izquierda y la información de contacto junto al horario ocupa el tercio restante a la derecha, manteniendo ambas columnas alineadas arriba con align-items: start. 
+
+
+
+4. Fila del formulario (documento y celular):
+
+    Decisión: Flexbox 
+
+
+    Justificación: Se utilizó Flexbox por tratarse de una distribución estrictamente unidimensional (1D horizontal). Al alinear dos campos cortos relacionados dentro de una misma fila, Flexbox con display: flex, gap y flex: 1 en cada campo permite que ambos se expandan equitativamente ocupando el 50% del ancho del contenedor sin la complejidad de una cuadrícula completa. 
+
+
+
+5. Encabezado (Header):
+
+    Decisión: Flexbox 
+
+
+    Justificación: Se utilizó Flexbox debido a que el encabezado es un flujo unidimensional (1D a lo largo del eje horizontal). Con justify-content: space-between y align-items: center, se posiciona el logo y el nombre a la izquierda y el menú de navegación a la derecha, garantizando flexibilidad y fluidez si los enlaces aumentan o se adaptan de tamaño. 
+
+
+
+6. Pie de página (Footer):
+
+    Decisión: Flexbox 
+
+
+    Justificación: Se utilizó Flexbox por ser unidimensional (1D). Permite centrar y agrupar en un solo eje los datos del negocio y correo mediante justify-content: center y align-items: center de forma directa y limpia. 
+
+
+
+
+PRUEBAS RESPONSIVE MOBILE-FIRST (360 PX, 768 PX Y 1280 PX)
+
+
+Problemas identificados y soluciones aplicadas:
+
+
+    Desplazamiento horizontal en tablas a 360 px: 
+
+
+    Problema: Las tablas de tarifas con 4 y 5 columnas generaban scroll lateral en celulares de 360 px debido al relleno y tamaño de letra estándar de escritorio. 
+
+
+    Solución: Se aplicó un enfoque mobile-first reduciendo la tipografía de la tabla a 0.75rem, disminuyendo el padding de las celdas a 5px 3px y permitiendo word-break: break-word. Las tablas ahora se leen completas a 360 px sin scroll lateral. Desde 768 px se restauran a tamaño 1rem. 
+
+
+
+2. Desborde del encabezado en una fila en pantallas móviles:
+
+    Problema: Al abrir el sitio en 360 px, el logo, título y enlaces de navegación colisionaban al estar forzados en una sola fila horizontal. 
+
+
+    Solución: En los estilos base móviles se configuró flex-direction: column y align-items: center para el header, dejando el nombre arriba y el menú centrado debajo con flex-wrap: wrap. Con la media query a 768 px se restablece la fila horizontal (justify-content: space-between). 
+
+
+
+3. Colapso de los campos cortos del formulario a 360 px:
+
+    Problema: Al colocar Documento de identidad y Celular en una sola fila horizontal fija, ambos campos quedaban excesivamente estrechos para ingresar texto en teléfonos pequeños. 
+
+
+    Solución: Se configuró .fila-campos con flex-direction: column como estilo base móvil para que cada campo ocupe el 100% del ancho apilado. A partir de tablet (min-width: 768px) se activa flex-direction: row con gap: 16px para retomar la visualización en la misma fila. 
+
+
+
+
+RETOS 6, 7 Y 8 - CAMBIOS CON BOOTSTRAP
+
+
+    Beneficios y franja final 
+
+
+Agregué los cuatro beneficios debajo de la flota en pruebas y en inicio.
+
+Utilicé solo clases de Bootstrap en esta parte. El enlace lleva a reservas.
+
+La imagen ya estaba en mi carpeta img y solo aparece desde 768 px.
+
+Usé texto oscuro sobre fondo claro y blanco sobre fondo oscuro. El enlace tiene fondo claro y letra oscura.
+
+
+2. Bootstrap antes de mi CSS
+
+Puse Bootstrap 5.3.3 y su bundle, que es el archivo JavaScript, en las tres páginas.
+
+Mi CSS carga después. La cascada es la forma en que el navegador decide qué regla aplicar.
+
+Conservé las hojas separadas que ya tenía; en mi proyecto no hay un styles.css.
+
+
+3. Inicio con columnas
+
+La portada tiene dos columnas desde md. Las rutas tienen una, dos o tres según el ancho.
+
+La flota usa las mismas columnas que mi página de pruebas, conservando los modelos y precios de inicio.
+
+container centra el contenido, row crea una fila y col reparte el ancho en 12 partes.
+
+col-12 ocupa toda la fila. col-md-6 ocupa la mitad desde 768 px.
+
+sm empieza en 576 px, md en 768 px, lg en 992 px y xl en 1200 px.
+
+
+4. Tarifas con dos columnas
+
+Dejé las tablas a la izquierda y qué llevar a la derecha desde lg.
+
+Conservé el estilo de las tablas y sus precios. En celular todo queda apilado.
+
+
+5. Reservas con columnas 8/4
+
+El formulario ocupa 8 partes y el contacto 4 desde md.
+
+Documento y celular ocupan 6 partes cada uno desde md.
+
+No cambié required, pattern, minlength, min, max ni maxlength.
+
+Estas reglas revisan los campos obligatorios, el formato y los límites antes de enviar.
+
+
+6. Limpieza del CSS
+
+Quité flex y grid propios de las partes que ahora organiza Bootstrap.
+
+Conservé colores, fuentes, tarjetas, tablas y estados del menú.
+
+
+7. Cinco clases consultadas en la documentación oficial
+
+    flex-md-row: pone los elementos en fila desde 768 px. 
+
+
+    d-none: oculta un elemento. 
+
+
+    d-md-block: muestra como bloque desde 768 px; la usé junto a d-none. 
+
+
+    gap-4: separa los elementos con 1.5 rem. 
+
+
+    p-md-5: agrega 3 rem de espacio interno desde 768 px. 
+
+
+Documentación:
+
+https://getbootstrap.com/docs/5.3/utilities/flex/
+
+https://getbootstrap.com/docs/5.3/utilities/display/
+
+https://getbootstrap.com/docs/5.3/utilities/spacing/
+
+https://getbootstrap.com/docs/5.3/layout/grid/
+
+Otras clases usadas: fs-4 cambia el tamaño de letra, fw-bold pone negrita,
+
+lead destaca un texto, text-bg-dark pone fondo oscuro con letra clara,
+
+align-items-center centra en el eje cruzado y justify-content-between separa hacia los extremos.
+
+En m y p, m significa margen (espacio por fuera) y p relleno (espacio por dentro).
+
+mb es margen debajo; px es relleno horizontal y py relleno vertical.
+
+g-4 separa las columnas y filas de la grilla. h-100 ocupa todo el alto disponible.
+
+
+8. Tres conflictos encontrados al revisar el código
+
+    Mi #nuestra-flota tenía display: grid. Lo quité y puse row dentro de container para que Bootstrap reparta las columnas. 
+
+
+    .fila-campos .campo tenía width: 100%. Lo quité para que col-md-6 pueda ocupar media fila. 
+
+
+    Bootstrap coloca caption debajo de la tabla. Puse caption-side: top en mi CSS para mantener el título arriba. 
+
+
+No agregué !important. Falta comprobar estos cambios visualmente en DevTools.
+
+
+9. Comparativa de líneas reales
+
+Tomé como v1.5 el commit 9dbcdb9 (feat: diseño mobile-first y soporte responsive v1.5).
+
+Conté todas las líneas de cada archivo, incluyendo comentarios y líneas vacías.
+
+css/index.css: antes 333 líneas; ahora 115 líneas.
+
+css/tarifas.css: antes 251 líneas; ahora 112 líneas.
+
+css/reservas.css: antes 337 líneas; ahora 134 líneas.
+
+css/articulos.css: antes 53 líneas; ahora 26 líneas.
+
+Total: antes 974; ahora 387; reducción 587 líneas.
+
+La reducción incluye quitar comentarios repetidos; no toda corresponde a reglas eliminadas.
+
+Tiempo de v1.5: pendiente, no estaba registrado.
+
+Tiempo de esta versión: pendiente de completar con mi tiempo real.
+
+Ventaja: con las columnas y utilidades ya no tengo que repetir la distribución en CSS.
+
+Desventaja: el HTML tiene más clases y tengo que aprender qué significa cada una.
+
+Conclusión: Bootstrap me ayuda a organizar el sitio, pero todavía necesito mi CSS para conservar la identidad.
+
+
+10. Revisión y publicación pendientes
+
+Falta revisar inicio, tarifas y reservas a 360 px, 768 px y 1280 px en el navegador.
+
+Falta medir el tiempo real y comprobar la publicación de v2.0-beta en GitHub Pages.
+
+
+Revisión del código: las etiquetas cierran en orden y las rutas locales existen en las cuatro páginas.
+
+Comparé los campos del formulario con la versión anterior: conservan todos sus atributos y validaciones. 
