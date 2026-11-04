@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rueda Libre | Reservas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
    <header class="shadow-sm sticky-top" style="background-color: #705844;">
@@ -53,104 +53,176 @@
         </table>
      </div>
     </section>
+
        <section class="container pb-5">
-         <form method="post" class="mx-auto" style="max-width: 600px;">
+         
+         <!-- Alerta informativa superior que el usuario puede cerrar -->
+         <div class="alert alert-warning alert-dismissible fade show mx-auto mb-4" style="max-width: 600px;" role="alert">
+             <strong>¡Atención!</strong> No olvides llevar tu documento de identidad original al momento de recoger la bicicleta.
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+
+         <form method="post" class="mx-auto needs-validation" style="max-width: 600px;" novalidate>
         <fieldset>
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
                 <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Tus datos</legend>
-                <p class="col-12 p-2">
+                <div class="col-12 p-2">
                     <label for="nombre" class="form-label fw-medium text-secondary">*Nombre completo:</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </p>
-                <p class="col-12 p-2">
+                    <div class="invalid-feedback">Por favor, escribe tu nombre completo para continuar.</div>
+                </div>
+                <div class="col-12 p-2">
                     <label for="docu" class="form-label fw-medium text-secondary">*Numero de documento</label>
-                    <input type="number" class="form-control" id="docu" name="docu" minlength="6" maxlength="10" required>
-                </p class="col-12 p-2">
-                <p class="col-12 p-2">
+                    <input type="text" class="form-control" id="docu" name="docu" minlength="6" maxlength="10" pattern="[0-9]{6,10}" required>
+                    <div class="invalid-feedback">El número de documento debe contener solo números y tener entre 6 y 10 dígitos.</div>
+                </div>
+                <div class="col-12 p-2">
                     <label for="correo" class="form-label fw-medium text-secondary">*Correo electronico:</label>
                     <input type="email" class="form-control" id="correo" name="correo" required>
-                </p>
-                <p class="col-12 p-2">
+                    <div class="invalid-feedback">Introduce un correo electrónico válido (ejemplo: usuario@correo.com).</div>
+                </div>
+                <div class="col-12 p-2">
                     <label for="celu" class="form-label fw-medium text-secondary">*Celular (Tiene que empezar por 3)</label>
-                    <input type="tel" class="form-control" id="celu" name="celu"  pattern="3[0-9]{5,9}" required>
-                </p>
+                    <input type="tel" class="form-control" id="celu" name="celu" pattern="3[0-9]{9}" maxlength="10" required>
+                    <div class="invalid-feedback">El número de celular debe empezar obligatoriamente por 3 y tener exactamente 10 dígitos.</div>
+                </div>
             </fieldset>
+
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
                 <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Tu alquiler</legend>
                 
-                  <p class="col-12 p-2">
+                  <div class="col-12 p-2">
                       <label for="alqui" class="form-label fw-medium text-secondary">*Fecha de alquiler (Nov 1 - Dic 02 | 2026):</label>
                     <input type="date" class="form-control" id="alqui" name="alqui" min="2026-11-01" max="2026-12-02" required>
-                  </p>
+                    <div class="invalid-feedback">Selecciona una fecha de alquiler válida dentro del rango permitido (Nov 1 - Dic 02 de 2026).</div>
+                  </div>
                 
-                  <p class="col-12 p-2">
-                      <label for="tipo" class="form-label fw-medium text-secondary">Tipo de bicicleta</label>
+                  <div class="col-12 p-2">
+                      <label for="tipo" class="form-label fw-medium text-secondary">*Tipo de bicicleta</label>
                     <select name="tipo" class="form-select" id="tipo" required>
+                        <option selected disabled value="">Selecciona una opción...</option>
                         <option value="urban">Urbana</option>
                         <option value="monta">Montaña</option>
                         <option value="elec">Electrica</option>
                     </select>
-                  </p>
-                  <p class="col-12 p-2">
-                    <label for="plan" class="form-label fw-medium text-secondary d-block mb-2">Plan:</label><br>
-                    <label class="form-check-label">
+                    <div class="invalid-feedback">Debes seleccionar un tipo de bicicleta disponible en la lista.</div>
+                  </div>
+
+                  <div class="col-12 p-2">
+                    <label class="form-label fw-medium text-secondary d-block mb-2">*Plan:</label>
+                    <div class="form-check">
                         <input type="radio" class="form-check-input" id="1-hora" name="plan" value="1-hora" required>
-                        1 Hora
-                    </label><br>
-                    <label class="form-check-label">
+                        <label class="form-check-label" for="1-hora">1 Hora</label>
+                    </div>
+                    <div class="form-check">
                         <input type="radio" class="form-check-input" id="medio-dia" name="plan" value="medio-dia" required>
-                        Medio dia
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="radio" id="dia-com" class="form-check-input" name="plan" value="dia-com" required>
-                        Dia completo
-                    </label>
-                  </p>
-                    <p class="col-12 p-2">
-                        <label for="cantidad" class="form-label fw-medium text-secondary">Cantidad de bicicletas:</label>
-                        <input type="number" class="form-control" id="cantidad" min="1" max="6" name="cantidad" required>
-                    </p>
+                        <label class="form-check-label" for="medio-dia">Medio dia</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="dia-com" name="plan" value="dia-com" required>
+                        <label class="form-check-label" for="dia-com">Dia completo</label>
+                    </div>
+                    <div class="invalid-feedback d-block" style="display:none !important;">Debes seleccionar un plan de alquiler.</div>
+                  </div>
+
+                    <div class="col-12 p-2">
+                        <label for="cantidad" class="form-label fw-medium text-secondary">*Cantidad de bicicletas:</label>
+                        <input type="number" class="form-control" id="cantidad" min="1" max="6" name="cantidad" value="1" required>
+                        <div class="invalid-feedback">Puedes reservar entre 1 y 6 bicicletas por solicitud.</div>
+                    </div>
                
-                  <p class="col-12 p-2">
-                      <label for="guia" class="form-label fw-medium text-secondary d-block mb-2">Recorrido guiados:</label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="rio">
-                        Rios y Parques
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="sabore">
-                        Sabores de Rio
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" id="reto" class="form-check-input">
-                        Reto las palmas
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="ninguno">
-                        Ninguno
-                    </label>
-                  </p>
+                  <div class="col-12 p-2">
+                      <label class="form-label fw-medium text-secondary d-block mb-2">Recorridos guiados:</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rio" name="guia[]">
+                        <label class="form-check-label" for="rio">Rios y Parques</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="sabore" name="guia[]">
+                        <label class="form-check-label" for="sabore">Sabores de Rio</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="reto" name="guia[]">
+                        <label class="form-check-label" for="reto">Reto las palmas</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="ninguno" name="guia[]">
+                        <label class="form-check-label" for="ninguno">Ninguno</label>
+                    </div>
+                  </div>
             </fieldset>
+
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
                 <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: #705844;">Confirmacion</legend>
-                <p class="col-12 p-2">
-                    <label for="comen" class="form-label fw-medium text-secondary">Comentarios (maximo 300 caracteres):</label><br>
-                    <textarea name="comen" class="form-control" rows="4" id="comen" maxlength="300" cols="40"></textarea>
-                  </p>
-                <label class=" form-check-label p-2">
-                    <input type="checkbox" class="form-check-input" name="cond" id="cond" required>
-                    aceptación de las políticas de alquiler. *
-                </label>
+                <div class="col-12 p-2">
+                    <label for="comen" class="form-label fw-medium text-secondary">Comentarios (maximo 300 caracteres):</label>
+                    <textarea name="comen" class="form-control" rows="4" id="comen" maxlength="300"></textarea>
+                    <div class="invalid-feedback">El comentario no puede superar los 300 caracteres.</div>
+                </div>
                 
+                <div class="p-2 d-flex align-items-center gap-2 flex-wrap">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="cond" id="cond" required>
+                        <label class="form-check-label" for="cond">Aceptación de las políticas de alquiler. *</label>
+                        <div class="invalid-feedback">Es obligatorio aceptar las políticas de alquiler para continuar.</div>
+                    </div>
+                    <!-- Botón para abrir el modal de políticas -->
+                    <button type="button" class="btn btn-sm btn-outline-secondary ms-auto" data-bs-toggle="modal" data-bs-target="#politicasModal">
+                        Ver políticas
+                    </button>
+                </div>
             </fieldset>
-            <button type="submit" name="boton" class=" btn-cafe btn-lg w-100 rounded-3 fw-semibold" style="background-color:#f7dcd0;" >Reservar</button>
+            
+            <button type="submit" name="boton" class="btn btn-lg w-100 rounded-3 fw-semibold text-dark" style="background-color:#f7dcd0;">Reservar</button>
         </fieldset>
         </form>
        </section>
-       
   </main><br>
+
+    <!-- Modal "Políticas de alquiler" -->
+    <div class="modal fade" id="politicasModal" tabindex="-1" aria-labelledby="politicasModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #705844; color: white;">
+            <h5 class="modal-title fw-bold" id="politicasModalLabel">Políticas de Alquiler - Rueda Libre</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ol class="ps-3 mb-0">
+                <li class="mb-2">Presenta tu documento de identidad original al recoger la bicicleta.</li>
+                <li class="mb-2">Revisa la bicicleta con el asesor antes de salir.</li>
+                <li class="mb-2">Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+                <li class="mb-2">Los daños por mal uso se cobran según el costo de la reparación.</li>
+                <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <footer class="text-center text-white py-4" style="background-color: #705844;">Rueda libre | hola@ruedalibre.example | 2026</footer>
     
+    <!-- Bootstrap 5 JavaScript Bundle (necesario para el modal y las alertas) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script oficial de validación de Bootstrap -->
+    <script>
+        (() => {
+          'use strict'
+          const forms = document.querySelectorAll('.needs-validation')
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })()
+    </script>
 </body>
 </html>
