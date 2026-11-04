@@ -1,4 +1,4 @@
-#  Trayecto 1: Rueda Libre | Parche-Dev | IA Generativa
+#  Trayecto 1: Rueda Libre | Parche-Dev | IA Generativa | Algoritmia
 
 
 ##  Descripción del Proyecto
