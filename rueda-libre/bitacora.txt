@@ -402,3 +402,25 @@ Falta medir el tiempo real y comprobar la publicación de v2.0-beta en GitHub Pa
 Revisión del código: las etiquetas cierran en orden y las rutas locales existen en las cuatro páginas.
 
 Comparé los campos del formulario con la versión anterior: conservan todos sus atributos y validaciones. 
+
+
+TAILWIND CSS - RUEDA NOCTURNA
+
+Instalé `tailwindcss` y `@tailwindcss/cli` dentro de `nocturna/`. El archivo `src/input.css` importa Tailwind y el comando `npm run dev` ejecuta la CLI con `--watch` para generar `src/output.css`.
+
+Revisé el CSS generado: encontré `.bg-slate-950`, que sí se usa en los botones y en el fondo de la página. No encontré `.bg-pink-500`, porque no se usa en el HTML. Tailwind analiza las clases de los archivos fuente y genera solo las utilidades que detecta, manteniendo el CSS publicado más pequeño.
+
+El CSS generado se conserva en el repositorio para que la página funcione en GitHub Pages, donde no se ejecuta la CLI. `nocturna/.gitignore` excluye `node_modules/`.
+
+
+KIT DE COMPONENTES - RUEDA NOCTURNA
+
+Reglas del kit compartidas por botones, cards, alertas y campos:
+
+- Bordes redondeados: `rounded-xl` (12 px) para todos los componentes y controles.
+- Espaciado: escala Tailwind en incrementos de 4 px; se usan `space-y-2/3/4/5/6` y `p-3/4/5` según la densidad.
+- Colores base: `slate-950` para el fondo, `slate-900` para superficies, blanco para títulos y `slate-300/400` para texto secundario.
+- Acento y estados: amarillo para la acción principal y el foco; celeste, verde y ámbar distinguen información, éxito y advertencia. Los niveles conservan texto explícito además del color.
+- Interacción: hover cambia fondo o borde y aumenta la sombra sin modificar las dimensiones; focus usa un anillo de 4 px visible.
+
+La página de componentes comparte `nocturna/src/output.css` con las rutas. La alerta de éxito usa `role="status"` y `aria-live="polite"` para anunciar el mensaje sin interrumpir al lector de pantalla.
