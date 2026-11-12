@@ -424,3 +424,28 @@ Reglas del kit compartidas por botones, cards, alertas y campos:
 - Interacción: hover cambia fondo o borde y aumenta la sombra sin modificar las dimensiones; focus usa un anillo de 4 px visible.
 
 La página de componentes comparte `nocturna/src/output.css` con las rutas. La alerta de éxito usa `role="status"` y `aria-live="polite"` para anunciar el mensaje sin interrumpir al lector de pantalla.
+
+
+LANDING DE RUEDA NOCTURNA
+
+El encabezado, cada sección principal y el pie usan el mismo contenedor centrado `w-full max-w-6xl mx-auto px-4`, con más relleno lateral en pantallas mayores.
+
+Distribución de contenido: las tres rutas usan Grid porque son elementos repetidos en dos dimensiones y deben alinearse en tres columnas en escritorio; en móvil pasan a una columna y en tablet a dos. Los cuatro pasos de «¿Cómo funciona?» también usan Grid: permite mostrar cuatro columnas equivalentes en escritorio y reorganizarlas en dos y una columna según el ancho.
+
+El encabezado usa Flexbox para alinear marca, navegación y acción en un eje horizontal, y el pie usa Flexbox para organizar sus tres bloques en escritorio y apilarlos en móvil.
+
+
+AJUSTE MOBILE-FIRST DE LA LANDING
+
+Diagnóstico previo a 360 px: los enlaces del encabezado seguían visibles y el `flex-wrap` distribuía marca, navegación y botón en varias filas, haciendo el header alto y separando la acción. No había desbordamiento horizontal; las rutas y los pasos ya estaban apilados. Las rutas, sin embargo, saltaban de una columna directamente a tres desde `md`, sin el estado de dos columnas para tablet.
+
+La navegación queda oculta en móvil y el botón «Inscríbete» permanece visible. El encabezado se apila hasta `md` y cambia a fila en ese breakpoint. Las rutas pasan de 1 a 2 columnas en `sm` y a 3 en `lg`; los pasos pasan de 1 a 2 en `sm` y a 4 en `lg`. Títulos, espacios e imágenes amplían su escala en `sm` y `lg`.
+
+Prueba en modo dispositivo:
+
+| Ancho | Header | Rutas | Pasos | Navegación / acción | Desbordamiento |
+| --- | --- | --- | --- | --- | --- |
+| 360 px | Apilado | 1 | 1 | Enlaces ocultos; «Inscríbete» visible | No |
+| 768 px | En fila | 2 | 2 | Enlaces visibles; «Inscríbete» visible | No |
+| 1024 px | En fila | 3 | 4 | Enlaces visibles; «Inscríbete» visible | No |
+| 1280 px | En fila | 3 | 4 | Enlaces visibles; «Inscríbete» visible | No |
