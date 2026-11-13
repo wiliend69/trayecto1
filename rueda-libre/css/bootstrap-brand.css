@@ -63,3 +63,70 @@ h6 {
 .rl-campaign-slide h3 {
   color: var(--color-amarillo-farol);
 }
+
+.rl-bg-navy {
+  background-color: var(--color-azul-noche);
+}
+
+.rl-bg-cream {
+  background-color: var(--color-crema);
+}
+
+.rl-bg-asphalt {
+  background-color: var(--color-gris-asfalto);
+  color: var(--color-crema);
+}
+
+.rl-bg-farol {
+  background-color: var(--color-amarillo-farol);
+}
+
+.rl-text-navy {
+  color: var(--color-azul-noche);
+}
+
+.rl-modal-header {
+  background-color: var(--color-azul-noche);
+  color: var(--color-crema);
+}
+
+.rl-max-600 {
+  max-width: 600px;
+}
+
+.rl-max-400 {
+  max-width: 400px;
+}
+
+.rl-brand-mark {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.rl-service-image-frame {
+  height: 220px;
+}
+
+.rl-bike-image {
+  height: 140px;
+  object-fit: contain;
+}
+
+.rl-promo-slide {
+  min-height: 320px;
+}
+
+.rl-carousel-image {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.rl-campaign-image {
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.needs-validation.was-validated .rl-plan-options:has(input:invalid) + .rl-plan-feedback {
+  display: block;
+}

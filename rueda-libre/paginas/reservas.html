@@ -9,12 +9,12 @@
     <link href="../css/bootstrap-brand.css" rel="stylesheet">
 </head>
 <body>
-   <header class="shadow-sm sticky-top" style="background-color: var(--color-azul-noche);">
+   <header class="shadow-sm sticky-top rl-bg-navy">
        <nav class="navbar navbar-expand-md navbar-dark container py-3">
          <div class="container-fluid d-flex flex-row align-items-center justify-content-between p-0">
             <div class="d-flex align-items-center gap-2 text-white">
                 <h1 class="h4 mb-0 fw-bold">Rueda Libre</h1>
-                <img class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" src="../img/istockphoto-543977438-612x612.jpg" alt="Rueda libre" >
+                <img class="rounded-circle rl-brand-mark" src="../img/istockphoto-543977438-612x612.jpg" alt="Rueda libre" >
             </div>
       
                <div class="flew-grow-0">
@@ -31,18 +31,18 @@
     </header>
   <main>
     <section class="reserva container py-5">
-     <div class="table-responsive table-bordered mx-auto  rounded-4 overflow-hidden" style="max-width: 600px;">
-           <table class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide" style="background-color: var(--color-azul-noche);">
-            <caption class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide" style="background-color: var(--color-azul-noche);">
+     <div class="table-responsive table-bordered mx-auto  rounded-4 overflow-hidden rl-max-600">
+           <table class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide rl-bg-navy">
+            <caption class="caption-top text-center py-3 text-white fw-bold text-uppercase tracking-wide rl-bg-navy">
                 <h2 class="h4 mb-0">Reserva tu bicicleta</h2>
             </caption>
-            <thead class="text-white" style="background-color: var(--color-gris-asfalto);">
+            <thead class="text-white rl-bg-asphalt">
                 <tr>
                     <th scope= "col" class="py-3 fw-semibold">Dia</th>
                     <th scope= "col" class="py-3 fw-semibold">Horario</th>
                 </tr>
             </thead>
-              <tbody style="background-color: var(--color-crema);">
+              <tbody class="rl-bg-cream">
                 <tr>
                     <td class="py-3 fw-medium text-secondary">Lunes a Viernes</td>
                     <td class="py-3 text-dark fw-bold">7:00 am a 7:00 pm</td>
@@ -59,15 +59,15 @@
        <section class="container pb-5">
          
          <!-- Alerta informativa superior que el usuario puede cerrar -->
-         <div class="alert alert-warning alert-dismissible fade show mx-auto mb-4" style="max-width: 600px;" role="alert">
+         <div class="alert alert-warning alert-dismissible fade show mx-auto mb-4 rl-max-600" role="alert">
              <strong>¡Atención!</strong> No olvides llevar tu documento de identidad original al momento de recoger la bicicleta.
              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
          </div>
 
-         <form method="post" class="mx-auto needs-validation" style="max-width: 600px;" novalidate>
+         <form method="post" class="mx-auto needs-validation rl-max-600" novalidate>
         <fieldset>
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
-                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: var(--color-azul-noche);">Tus datos</legend>
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0 rl-bg-navy">Tus datos</legend>
                 <div class="col-12 p-2">
                     <label for="nombre" class="form-label fw-medium text-secondary">*Nombre completo:</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -91,7 +91,7 @@
             </fieldset>
 
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
-                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: var(--color-azul-noche);">Tu alquiler</legend>
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0 rl-bg-navy">Tu alquiler</legend>
                 
                   <div class="col-12 p-2">
                       <label for="alqui" class="form-label fw-medium text-secondary">*Fecha de alquiler (Nov 1 - Dic 02 | 2026):</label>
@@ -112,19 +112,21 @@
 
                   <div class="col-12 p-2">
                     <label class="form-label fw-medium text-secondary d-block mb-2">*Plan:</label>
-                    <div class="form-check">
+                    <div class="rl-plan-options">
+                      <div class="form-check">
                         <input type="radio" class="form-check-input" id="1-hora" name="plan" value="1-hora" required>
                         <label class="form-check-label" for="1-hora">1 Hora</label>
-                    </div>
-                    <div class="form-check">
+                      </div>
+                      <div class="form-check">
                         <input type="radio" class="form-check-input" id="medio-dia" name="plan" value="medio-dia" required>
                         <label class="form-check-label" for="medio-dia">Medio dia</label>
-                    </div>
-                    <div class="form-check">
+                      </div>
+                      <div class="form-check">
                         <input type="radio" class="form-check-input" id="dia-com" name="plan" value="dia-com" required>
                         <label class="form-check-label" for="dia-com">Dia completo</label>
+                      </div>
                     </div>
-                    <div class="invalid-feedback d-block" style="display:none !important;">Debes seleccionar un plan de alquiler.</div>
+                    <div class="invalid-feedback rl-plan-feedback">Debes seleccionar un plan de alquiler.</div>
                   </div>
 
                     <div class="col-12 p-2">
@@ -155,7 +157,7 @@
             </fieldset>
 
             <fieldset class="bg-white rounded-4 overflow-hidden mb-4 border">
-                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0" style="background-color: var(--color-azul-noche);">Confirmacion</legend>
+                <legend class="text-white fw-bold text-uppercase fs-6 px-4 mb-0 rl-bg-navy">Confirmacion</legend>
                 <div class="col-12 p-2">
                     <label for="comen" class="form-label fw-medium text-secondary">Comentarios (maximo 300 caracteres):</label>
                     <textarea name="comen" class="form-control" rows="4" id="comen" maxlength="300"></textarea>
@@ -182,11 +184,11 @@
   </main><br>
 
     <!-- Modal "Políticas de alquiler" -->
-    <div class="modal fade" id="politicasModal" tabindex="-1" aria-labelledby="politicasModalLabel" aria-hidden="true">
+    <div class="modal fade" id="politicasModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="politicasModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header" style="background-color: var(--color-azul-noche); color: var(--color-crema);">
-            <h5 class="modal-title fw-bold" id="politicasModalLabel">Políticas de Alquiler - Rueda Libre</h5>
+          <div class="modal-header rl-modal-header">
+            <h2 class="modal-title fw-bold h5" id="politicasModalLabel">Políticas de Alquiler - Rueda Libre</h2>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -205,7 +207,7 @@
       </div>
     </div>
     
-    <footer class="text-center text-white py-4" style="background-color: var(--color-azul-noche);">Rueda libre | hola@ruedalibre.example | 2026</footer>
+    <footer class="text-center text-white py-4 rl-bg-navy">Rueda libre | hola@ruedalibre.example | 2026</footer>
     
     <!-- Bootstrap 5 JavaScript Bundle (necesario para el modal y las alertas) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
