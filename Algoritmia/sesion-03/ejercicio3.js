@@ -6,7 +6,7 @@ function generarPiramide() {
         return;
     }
 
-    let resultadoFinal = ""; // Acumulador para mostrar toda la pirámide junta al final
+    let resultadoFinal = "";
 
     for (let i = 1; i <= pisos; i++) {
         let fila = "";
@@ -21,10 +21,10 @@ function generarPiramide() {
             fila += "*";
         }
 
-        resultadoFinal += fila + "\n"; // \n hace un salto de línea
+        resultadoFinal += fila + "\n"; 
     }
 
-    // Mostramos la pirámide en la consola para que los espacios no se deformen
+    
     console.log(resultadoFinal);
     alert("Pirámide generada con éxito. Por favor, revisa la CONSOLA del navegador (F12) para verla perfectamente alineada.");
 }

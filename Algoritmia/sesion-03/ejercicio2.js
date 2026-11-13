@@ -1,5 +1,5 @@
 function analizarCalificaciones() {
-    // Preguntamos el tamaño total del grupo
+   
     let cantidadEstudiantes = parseInt(prompt("¿Cuántas calificaciones desea ingresar?"));
     
     if (isNaN(cantidadEstudiantes) || cantidadEstudiantes <= 0) {
@@ -9,13 +9,13 @@ function analizarCalificaciones() {
 
     let notas = [];
 
-    // Ciclo para llenar el arreglo con los datos del usuario
+  
     for (let i = 0; i < cantidadEstudiantes; i++) {
         let nota = parseFloat(prompt(`Ingrese la calificación del estudiante ${i + 1}:`));
         notas.push(nota);
     }
 
-    // --- PROCESAMIENTO (Un solo recorrido) ---
+
     let notaMaxima = notas[0];
     let notaMinima = notas[0];
     let sumaTotal = 0;

@@ -1,4 +1,4 @@
-// --- SUBPROCESOS (Componentes Hijos) ---
+
 function ComponenteItemLista(items) {
     let subtotal = 0;
     for (let i = 0; i < items.length; i++) {
@@ -8,19 +8,19 @@ function ComponenteItemLista(items) {
 }
 
 function ComponenteImpuestos(montoBase) {
-    return montoBase * 0.08; // 8% impuesto
+    return montoBase * 0.08; 
 }
 
 function ComponentePropina(montoBase) {
-    return montoBase * 0.10; // 10% propina
+    return montoBase * 0.10; 
 }
 
-// --- COMPONENTE PADRE (Raíz) ---
+
 function ComponenteFacturaRaiz() {
     let pedido = { productos: [] };
     let continuar = true;
 
-    // Ciclo interactivo para armar el pedido
+   
     while (continuar) {
         let nombre = prompt("Ingrese el nombre del plato / bebida:");
         let precio = parseFloat(prompt(`Ingrese el precio de "${nombre}":`));
@@ -36,13 +36,13 @@ function ComponenteFacturaRaiz() {
         }
     }
 
-    // Cálculos llamando a los subprocesos
+    
     const subtotal = ComponenteItemLista(pedido.productos);
     const impuesto = ComponenteImpuestos(subtotal);
     const propina = ComponentePropina(subtotal);
     const totalPagar = subtotal + impuesto + propina;
 
-    // Mostramos el desglose final
+   
     alert(`--- FACTURA DE CONSUMO ---
 Subtotal Platos: $${subtotal}
 Impuesto Consumo (8%): $${impuesto}
