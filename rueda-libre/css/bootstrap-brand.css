@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-verde-ruta: #2e7d5b;
+  --color-azul-noche: #10283a;
+  --color-naranja-pedal: #d9683a;
+  --color-gris-asfalto: #39434c;
+  --color-crema: #fff7e8;
+  --color-amarillo-farol: #ffd166;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  --bs-primary: var(--color-verde-ruta);
+  --bs-primary-rgb: 46, 125, 91;
+  --bs-secondary: var(--color-gris-asfalto);
+  --bs-secondary-rgb: 57, 67, 76;
+  --bs-dark: var(--color-azul-noche);
+  --bs-dark-rgb: 16, 40, 58;
+  --bs-white: var(--color-crema);
+  --bs-white-rgb: 255, 247, 232;
+  --bs-light: var(--color-crema);
+  --bs-body-bg: var(--color-crema);
+  --bs-body-bg-rgb: 255, 247, 232;
+  --bs-body-color: var(--color-gris-asfalto);
+  --bs-body-color-rgb: 57, 67, 76;
+  --bs-body-font-family: var(--font-open-sans);
+  --bs-link-color: var(--color-verde-ruta);
+  --bs-link-hover-color: var(--color-azul-noche);
+}
+
+body {
+  font-family: var(--font-open-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat);
+}
+
+.rl-button {
+  border-radius: 0.5rem;
+  border-color: var(--color-amarillo-farol);
+  background-color: var(--color-amarillo-farol);
+  color: var(--color-azul-noche);
+}
+
+.rl-button:hover,
+.rl-button:focus-visible {
+  border-color: var(--color-verde-ruta);
+  background-color: var(--color-verde-ruta);
+  color: var(--color-crema);
+}
+
+.rl-campaign-slide {
+  min-height: 320px;
+  background-color: var(--color-azul-noche);
+  color: var(--color-crema);
+}
+
+.rl-campaign-slide h3 {
+  color: var(--color-amarillo-farol);
+}

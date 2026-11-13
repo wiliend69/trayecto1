@@ -1,1 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+	--color-verde-ruta: #2e7d5b;
+	--color-azul-noche: #10283a;
+	--color-naranja-pedal: #d9683a;
+	--color-gris-asfalto: #39434c;
+	--color-crema: #fff7e8;
+	--color-amarillo-farol: #ffd166;
+	--font-montserrat: "Montserrat", sans-serif;
+	--font-open-sans: "Open Sans", sans-serif;
+}
+
+@layer components {
+	.button-primary {
+		@apply rounded-xl bg-amarillo-farol px-5 py-3 font-bold text-azul-noche shadow-md hover:bg-verde-ruta hover:text-crema focus:outline-none focus:ring-4 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-crema dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-verde-ruta dark:hover:text-crema dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche;
+	}
+
+	.button-secondary {
+		@apply rounded-xl bg-azul-noche px-5 py-3 font-bold text-crema shadow-md hover:bg-verde-ruta focus:outline-none focus:ring-4 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-crema dark:bg-gris-asfalto dark:text-crema dark:hover:bg-verde-ruta dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche;
+	}
+
+	.button-outline {
+		@apply rounded-xl border border-verde-ruta px-5 py-3 font-bold text-verde-ruta hover:bg-amarillo-farol hover:text-azul-noche focus:outline-none focus:ring-4 focus:ring-verde-ruta focus:ring-offset-2 focus:ring-offset-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus:ring-amarillo-farol dark:focus:ring-offset-azul-noche;
+	}
+}
